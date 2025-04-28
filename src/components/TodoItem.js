@@ -1,12 +1,13 @@
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
 const TodoItem = ({ item, deleteItem, toggleComplete }) => {
   return (
     <Row>
       <Col xs={12}>
-        <div className={`todo-item ${item.isComplete ? "item-complete" : ""}`}>
+        <div className={`todo-item ${item.isComplete ? 'item-complete' : ''}`}>
           <div className="todo-content">{item.task}</div>
+          <div>by {item.author.name}</div>
 
           <div>
             <button
@@ -19,7 +20,7 @@ const TodoItem = ({ item, deleteItem, toggleComplete }) => {
               className="button-delete"
               onClick={() => toggleComplete(item._id)}
             >
-              {item.isComplete ? `안끝남` : `끝남`}
+              {item.isComplete ? `안 끝남` : `끝남`}
             </button>
           </div>
         </div>
