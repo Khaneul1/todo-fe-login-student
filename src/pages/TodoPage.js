@@ -10,13 +10,18 @@ const TodoPage = ({ setUser }) => {
   const [todoValue, setTodoValue] = useState('');
 
   const getTasks = async () => {
-    const response = await api.get('/tasks');
-    console.log('taskList', response.data.data);
-    setTodoList(response.data.data);
+    try {
+      const response = await api.get('/tasks');
+      console.log('taskList', response.data.data);
+      setTodoList(response.data.data);
+    } catch (error) {
+      console.error('Error fetching tasks:', error);
+    }
   };
   useEffect(() => {
     getTasks();
   }, []);
+
   const addTodo = async () => {
     try {
       const response = await api.post('/tasks', {

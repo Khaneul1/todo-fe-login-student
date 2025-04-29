@@ -16,7 +16,7 @@ api.interceptors.request.use(
     return request;
   },
   function (error) {
-    console.log('REQUEST ERROR', error);
+    console.log('REQUEST ERROR', error.response);
   }
 );
 

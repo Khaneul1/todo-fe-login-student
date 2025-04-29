@@ -9,7 +9,7 @@ const PrivateRoute = ({ user, children }) => {
     <div>
       {/* user값이 있으면 ? TodoPage : redirect to /login */}
       {/* PrivateRoute는 공용으로 사용할 수 있는 것이어야 함!! 한 페이지에만 국한되어서는 안 됨 */}
-      user ? children : <Navigate to="/login" />
+      {user ? children : <Navigate to="/login" />}
     </div>
   );
 };

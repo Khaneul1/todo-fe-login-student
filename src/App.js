@@ -31,6 +31,7 @@ function App() {
         setUser(response.data.user);
       }
     } catch (error) {
+      console.log('Error fetching user:', error);
       setUser(null);
     }
   };
